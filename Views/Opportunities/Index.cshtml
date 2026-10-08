@@ -1,0 +1,49 @@
+@model IEnumerable<AcxiomCRM.Models.Opportunity>
+
+<h1>Opportunities</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Add Opportunity
+    </a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Probability</th>
+            <th>Stage</th>
+            <th>Expected Close Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var opportunity in Model)
+        {
+            <tr>
+                <td>@opportunity.Name</td>
+                <td>@opportunity.Amount</td>
+                <td>@opportunity.Probability%</td>
+                <td>@opportunity.Stage</td>
+                <td>@opportunity.ExpectedCloseDate.ToShortDateString()</td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@opportunity.Id"
+                       class="btn btn-sm btn-primary">
+                        Edit
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@opportunity.Id"
+                       class="btn btn-sm btn-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

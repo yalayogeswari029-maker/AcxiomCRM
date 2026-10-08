@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center mb-4">
+    <h1>CRM Dashboard</h1>
+    <p class="text-muted">Overview of your CRM system</p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Customers</h5>
+                <h2>@ViewBag.CustomerCount</h2>
+                <a asp-controller="Customers"
+                   asp-action="Index"
+                   class="btn btn-primary">
+                    View Customers
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Leads</h5>
+                <h2>@ViewBag.LeadCount</h2>
+                <a asp-controller="Leads"
+                   asp-action="Index"
+                   class="btn btn-primary">
+                    View Leads
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Follow-Ups</h5>
+                <h2>@ViewBag.FollowUpCount</h2>
+                <a asp-controller="FollowUps"
+                   asp-action="Index"
+                   class="btn btn-primary">
+                    View Follow-Ups
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5>Opportunities</h5>
+                <h2>@ViewBag.OpportunityCount</h2>
+                <a asp-controller="Opportunities"
+                   asp-action="Index"
+                   class="btn btn-primary">
+                    View Opportunities
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
